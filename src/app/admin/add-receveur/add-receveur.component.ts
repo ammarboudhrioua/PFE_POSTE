@@ -9,9 +9,10 @@ import { AdminService } from 'src/app/services/admin/admin.service';
   styleUrls: ['./add-receveur.component.css']
 })
 export class AddReceveurComponent implements OnInit {
-
+  poste='Poste dAgent :';
   submitted=false;
-  receveurForm= new FormGroup({
+  userForm= new FormGroup({
+    poste: new FormControl('',Validators.required),
     nom:new FormControl('',Validators.required),
     matricule: new FormControl('',[Validators.required,Validators.min(1000000)]),
     fpassword: new FormControl('',Validators.required),
@@ -24,10 +25,10 @@ export class AddReceveurComponent implements OnInit {
 
   submitForm() {
     this.submitted=true;
-    if (this.receveurForm.invalid) {
+    if (this.userForm.invalid) {
       return ;  
     }
-    this.adminService.addReceveur(this.receveurForm.value);
+    this.adminService.addUser(this.userForm.value);
     this.router.navigateByUrl('/admin')
   }
 }

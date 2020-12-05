@@ -6,10 +6,10 @@ import { Injectable } from '@angular/core';
 export class AdminService {
 
   constructor() { }
-  addReceveur(receveur) {
-    const receveurs = JSON.parse(localStorage.getItem("receveurs")) || [];
-    receveurs.push(receveur)
-    localStorage.setItem("receveurs", JSON.stringify(receveurs))
+  addUser(receveur) {
+    const utilisateurs = JSON.parse(localStorage.getItem("utilisateurs")) || [];
+    utilisateurs.push(receveur)
+    localStorage.setItem("utilisateurs", JSON.stringify(utilisateurs))
   }
   listReceveurs() {
     const receveurs = JSON.parse(localStorage.getItem("receveurs")) || [];

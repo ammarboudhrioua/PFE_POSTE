@@ -1,6 +1,14 @@
 <div class="mt-5 offset-4 col-4 ">
-    <form [formGroup]="receveurForm" >
+    <form [formGroup]="userForm" >
         <br>
+        <div class="input-group input-group-lg mb-3 ">
+          <select  formControlName="poste"  class="form-control border border-warning">
+              <option selected disabled hidden>{{poste}}</option>
+              <option>Adminstrateur</option>
+              <option>Receveur</option>
+              <option>Chef Cellule Trésorie</option>
+          </select>
+      </div>
         <div class="input-group input-group-lg mb-3">
             <input  type="text" Name="firstname" formControlName="nom" class="form-control border border-warning" placeholder="Nom d'Agent">
           </div>
