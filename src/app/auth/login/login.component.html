@@ -1,0 +1,17 @@
+<div class="">
+    <div class="mt-5 offset-4 col-4 ">
+        <form [formGroup]="loginForm" >
+            <br>
+            <div class="input-group input-group-lg mb-3">
+                <input maxlength="10" type="text"formControlName="matricule" class="form-control border border-warning" placeholder="Matricule" >
+              </div>
+              <small class="text-danger" *ngIf="submitted && loginForm.get('matricule').hasError('required')">Email is required.</small>
+              <div class="input-group input-group-lg mb-3">
+                <input type="password" formControlName="password" class="form-control border border-warning" placeholder="Mot de passe" >
+              </div>
+              <small class="text-danger" *ngIf="submitted && loginForm.get('password').hasError('required')">Email is required.</small>
+              <button (click)="submitForm()" type="button" class="mb-1 btn btn-outline-warning btn-lg text-primary btn-block">Connecter</button>
+              <br>
+        </form>
+    </div>
+    </div>
