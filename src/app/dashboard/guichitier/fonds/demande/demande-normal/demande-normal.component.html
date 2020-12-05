@@ -24,16 +24,16 @@
                     <th > montant total </th>
                 </tr>
             </thead>
-                <tbody>
+                <tbody [formGroup]="demandeNormalForm">
                 
-                    <tr>
-                        <td></td>
+                    <tr *ngFor="let monnaie of monnaies">
+                        <td>{{monnaie}}</td>
                         <td>
-                         <input> 
+                         <input formControllName= type="text"> 
                         </td>
-                        <td><h3 ></h3></td>
+                        <td><h3 >{{demandeNormalForm.controls.monnaie}}</h3></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                        
                         <td class="montant" >20</td>
                         <td >
@@ -136,7 +136,7 @@
                                     <input class="inputs" type=""    >
                         <td > <h3 class="somme" ></h3>  </td>
                     
-                    </tr>
+                    </tr> -->
                     <tr>
                        <td>montant total: </td>
                         <td><p id="total"></p></td>
