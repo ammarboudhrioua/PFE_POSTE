@@ -1,1 +1,19 @@
-<p>add-receveur works!</p>
+<div class="mt-5 offset-4 col-4 ">
+    <form [formGroup]="receveurForm" >
+        <br>
+        <div class="input-group input-group-lg mb-3">
+            <input  type="text" Name="firstname" formControlName="nom" class="form-control border border-warning" placeholder="Nom d'Agent">
+          </div>
+        <div class="input-group input-group-lg mb-3">
+            <input maxlength="10" type="text"formControlName="matricule" class="form-control border border-warning" placeholder="Matricule" >
+          </div>
+          <div class="input-group input-group-lg mb-3">
+            <input type="password" formControlName="fpassword" class="form-control border border-warning" placeholder="Mot de passe" >
+          </div>
+          <div class="input-group input-group-lg mb-3">
+            <input type="password" formControlName="cpassword" class="form-control border border-warning" placeholder="Confirmer Mot de passe" >
+          </div>
+          <button (click)="submitForm()" type="button" class="mb-1 btn btn-outline-warning btn-lg text-primary btn-block">Enregistrer</button>
+          <br>
+    </form>
+</div>
