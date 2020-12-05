@@ -1,28 +1,32 @@
 <div class="card">
     <div class="card-body">
         <mat-form-field>
-            <mat-label>Filter</mat-label>
+            <mat-label>Recherche</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
           </mat-form-field>
           
           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-          
-            <!-- Position Column -->
+           <!-- Poste Column -->
+           <ng-container matColumnDef="poste">
+            <th mat-header-cell *matHeaderCellDef> poste </th>
+            <td mat-cell *matCellDef="let user"> {{user.poste}} </td>
+          </ng-container>
+            <!-- nom Column -->
             <ng-container matColumnDef="nom">
-              <th mat-header-cell *matHeaderCellDef> Receveur </th>
-              <td mat-cell *matCellDef="let receveur"> {{receveur.nom}} </td>
+              <th mat-header-cell *matHeaderCellDef> Nom </th>
+              <td mat-cell *matCellDef="let user"> {{user.nom}} </td>
             </ng-container>
           
-            <!-- Name Column -->
+            <!-- matricule Column -->
             <ng-container matColumnDef="matricule">
               <th mat-header-cell *matHeaderCellDef> Matricule </th>
-              <td mat-cell *matCellDef="let receveur"> {{receveur.matricule}} </td>
+              <td mat-cell *matCellDef="let user"> {{user.matricule}} </td>
             </ng-container>
           
-            <!-- Weight Column -->
+            <!-- password Column -->
             <ng-container matColumnDef="fpassword">
               <th mat-header-cell *matHeaderCellDef> Mot de Passe </th>
-              <td mat-cell *matCellDef="let receveur"> {{receveur.fpassword}} </td>
+              <td mat-cell *matCellDef="let user"> {{user.fpassword}} </td>
             </ng-container>
           
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

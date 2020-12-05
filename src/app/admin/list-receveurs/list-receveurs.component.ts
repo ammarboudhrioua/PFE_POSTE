@@ -8,7 +8,8 @@ import { AdminService } from 'src/app/services/admin/admin.service';
   styleUrls: ['./list-receveurs.component.css']
 })
 export class ListReceveursComponent implements OnInit {
-  receveurs=[];
+  users=[];
+  poste:String;
   nom:String;
   matricule:String;
   fpassword:String;
@@ -17,9 +18,9 @@ export class ListReceveursComponent implements OnInit {
   constructor(private adminService: AdminService) { }
 
   ngOnInit(): void {
-    this.receveurs=this.adminService.listReceveurs();
-    this.displayedColumns= ['nom', 'matricule', 'fpassword']
-    this.dataSource = new MatTableDataSource(this.receveurs)
+    this.users=this.adminService.listUsers();
+    this.displayedColumns= ['poste','nom', 'matricule', 'fpassword']
+    this.dataSource = new MatTableDataSource(this.users)
     console.log(this.dataSource);
     
   }

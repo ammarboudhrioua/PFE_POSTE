@@ -6,6 +6,11 @@ import { ListReceveursComponent } from './admin/list-receveurs/list-receveurs.co
 import { UpdateReceveurComponent } from './admin/update-receveur/update-receveur.component';
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { DemandeClientComponent } from './dashboard/guichitier/fonds/demande/demande-client/demande-client.component';
+import { DemandeNormalComponent } from './dashboard/guichitier/fonds/demande/demande-normal/demande-normal.component';
+import { VersementClientComponent } from './dashboard/guichitier/fonds/versement/versement-client/versement-client.component';
+import { VersementNormalComponent } from './dashboard/guichitier/fonds/versement/versement-normal/versement-normal.component';
+import { IndexComponent } from './dashboard/guichitier/index/index.component';
 
 const routes: Routes = [
   {
@@ -14,29 +19,53 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path:'login',
+    path: 'login',
     component: LoginComponent
-  },{
-    path:'',
+  }, {
+    path: 'admin',
     component: DashboardComponent,
-    children:[{
-      path:'admin',
+    children: [{
+      path: '',
       component: ListReceveursComponent
-    }, 
+    },
     {
-      path:'admin/add',
+      path: 'add',
       component: AddReceveurComponent
     },
     {
-      path:'admin/update',
+      path: 'update',
       component: UpdateReceveurComponent
+    },
+    ]
+  }, {
+    path: 'guichitier',
+    component: DashboardComponent,
+    children: [{
+      path: '',
+      component: IndexComponent
+    },
+    {
+      path: 'demande/normal',
+      component: DemandeNormalComponent
+    },
+    {
+      path: 'demande/client',
+      component: DemandeClientComponent
+    }, {
+      path: 'versement/normal',
+      component: VersementNormalComponent
+    },
+    {
+      path: 'versement/client',
+      component: VersementClientComponent
     }
-  ]
-}
-];
+    ]
+  }
+]
+
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+  })
 export class AppRoutingModule { }

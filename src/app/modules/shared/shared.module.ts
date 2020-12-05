@@ -4,6 +4,7 @@ import { MaterialModule } from '../material/material.module';
 import { NavBarComponent } from 'src/app/dashboard/shared/nav-bar/nav-bar.component';
 import { SideBarComponent } from 'src/app/dashboard/shared/side-bar/side-bar.component';
 import { FooterComponent } from 'src/app/dashboard/shared/footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -15,12 +16,14 @@ import { FooterComponent } from 'src/app/dashboard/shared/footer/footer.componen
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule,
   ],
   exports:[
     NavBarComponent,
     SideBarComponent,
-    FooterComponent
+    FooterComponent,
+  
   ]
 })
 export class SharedModule { }

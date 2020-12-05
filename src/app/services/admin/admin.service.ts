@@ -6,14 +6,14 @@ import { Injectable } from '@angular/core';
 export class AdminService {
 
   constructor() { }
-  addUser(receveur) {
+  addUser(utilisateur) {
     const utilisateurs = JSON.parse(localStorage.getItem("utilisateurs")) || [];
-    utilisateurs.push(receveur)
+    utilisateurs.push(utilisateur)
     localStorage.setItem("utilisateurs", JSON.stringify(utilisateurs))
   }
-  listReceveurs() {
-    const receveurs = JSON.parse(localStorage.getItem("receveurs")) || [];
-    return receveurs;
+  listUsers() {
+    const utilisateurs = JSON.parse(localStorage.getItem("utilisateurs")) || [];
+    return utilisateurs;
   }
   }
 
