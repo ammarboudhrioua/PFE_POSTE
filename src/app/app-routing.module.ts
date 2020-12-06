@@ -11,6 +11,11 @@ import { DemandeNormalComponent } from './dashboard/guichitier/fonds/demande/dem
 import { VersementClientComponent } from './dashboard/guichitier/fonds/versement/versement-client/versement-client.component';
 import { VersementNormalComponent } from './dashboard/guichitier/fonds/versement/versement-normal/versement-normal.component';
 import { IndexComponent } from './dashboard/guichitier/index/index.component';
+import { ChargementComponent } from './reveveur/DAB/chargement/chargement.component';
+import { DABComponent } from './reveveur/DAB/dab/dab.component';
+import { DechargementComponent } from './reveveur/DAB/dechargement/dechargement.component';
+import { GuichetsComponent } from './reveveur/guichets/guichets.component';
+import { IndexRComponent } from './reveveur/index-r/index-r.component';
 
 const routes: Routes = [
   {
@@ -60,7 +65,29 @@ const routes: Routes = [
       component: VersementClientComponent
     }
     ]
-  }
+  },{
+    path: 'receveur',
+    component: DashboardComponent,
+    children: [{
+      path: '',
+      component: IndexRComponent
+    },{
+      path:'guichets',
+      component:GuichetsComponent
+    },{
+      path:'DAB',
+      component:DABComponent
+    },{
+      path:'DAB/chargement',
+      component:ChargementComponent
+    },
+    {
+      path:'DAB/dechargement',
+      component:DechargementComponent
+    }
+  ]
+}
+  
 ]
 
 

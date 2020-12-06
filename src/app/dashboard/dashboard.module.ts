@@ -15,6 +15,14 @@ import { VersementNormalComponent } from './guichitier/fonds/versement/versement
 import { VersementClientComponent } from './guichitier/fonds/versement/versement-client/versement-client.component';
 import { FermetureCaisseComponent } from './guichitier/caisse/fermeture-caisse/fermeture-caisse.component';
 import { AlimentationCaisseComponent } from './guichitier/caisse/alimentation-caisse/alimentation-caisse.component';
+import { GuichetsComponent } from '../reveveur/guichets/guichets.component';
+import { ChargementComponent } from '../reveveur/DAB/chargement/chargement.component';
+import { DechargementComponent } from '../reveveur/DAB/dechargement/dechargement.component';
+import { RecetteSupplimentaireComponent } from '../reveveur/recette-supplimentaire/recette-supplimentaire.component';
+import { DemandedeviseComponent } from '../reveveur/devise/demandedevise/demandedevise.component';
+import { EnvoiAutreBureauComponent } from '../reveveur/devise/envoi-autre-bureau/envoi-autre-bureau.component';
+import { IndexRComponent } from '../reveveur/index-r/index-r.component';
+import { DABComponent } from '../reveveur/DAB/dab/dab.component';
 
 
 @NgModule({
@@ -30,6 +38,14 @@ import { AlimentationCaisseComponent } from './guichitier/caisse/alimentation-ca
     VersementClientComponent,
     FermetureCaisseComponent,
     AlimentationCaisseComponent,
+    GuichetsComponent,
+    ChargementComponent,
+    DechargementComponent,
+    RecetteSupplimentaireComponent,
+    DemandedeviseComponent,
+    EnvoiAutreBureauComponent,
+    IndexRComponent,
+    DABComponent,
   ],
   imports: [
     CommonModule,
