@@ -11,16 +11,17 @@ import { AdminService } from 'src/app/services/admin/admin.service';
 export class AddReceveurComponent implements OnInit {
   poste='Poste dAgent :';
   submitted=false;
-  userForm= new FormGroup({
-    poste: new FormControl('',Validators.required),
-    nom:new FormControl('',Validators.required),
-    matricule: new FormControl('',[Validators.required,Validators.min(1000000)]),
-    fpassword: new FormControl('',Validators.required),
-    cpassword: new FormControl('',Validators.required)
-  })
+  userForm;
   constructor(private adminService: AdminService, private router:Router) { }
 
   ngOnInit(): void {
+    this.userForm= new FormGroup({
+      poste: new FormControl('',Validators.required),
+      nom:new FormControl('',Validators.required),
+      matricule: new FormControl('',[Validators.required,Validators.min(1000000)]),
+      fpassword: new FormControl('',Validators.required),
+      cpassword: new FormControl('',Validators.required)
+    })
   }
 
   submitForm() {
