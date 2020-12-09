@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReceveurService } from 'src/app/services/receveur/receveur.service';
 
 @Component({
   selector: 'app-index-r',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index-r.component.css']
 })
 export class IndexRComponent implements OnInit {
-
-  constructor() { }
+  x=0;
+coffres;
+    
+ 
+  constructor(private receveurService : ReceveurService) { }
 
   ngOnInit(): void {
+ 
+    this.coffres=this.receveurService.coffre();
   }
 
 }

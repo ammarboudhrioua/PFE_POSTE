@@ -6,6 +6,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 const materialComponents = [
   MatTableModule,
@@ -15,6 +16,7 @@ const materialComponents = [
   MatMenuModule,
   MatButtonModule,
   MatListModule,
+  MatExpansionModule,
 ];
 @NgModule({
   declarations: [],

@@ -9,7 +9,7 @@ export class AuthService {
   constructor() { }
   isLoginSubject = new BehaviorSubject<boolean>(this.isAuthenticated());
   login(user) {
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const users = JSON.parse(localStorage.getItem("utilisateurs")) || [];
     const exist = users.find((currentUser) => (currentUser.matricule === user.matricule) && (currentUser.password === user.fpassword));
     if (exist === undefined) {
       return false;

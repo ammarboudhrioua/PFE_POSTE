@@ -1,8 +1,60 @@
-<table class="table">
-    <tr class="btn-lg text-white d-block border-bottom">
-    <a href="admin/add">  ajouter receveur</a>  
-    </tr>
-    <tr class="btn btn-lg text-white d-block border-bottom">
-        profil
-    </tr>
-</table>
+<mat-nav-list>
+    <a routerLink="/admin/add" routerLinkActive="active-link"  class="btn btn-lg text-blue d-block">Ajouter Utilisateur</a>
+</mat-nav-list>
+<mat-nav-list >
+    <a routerLink="/receveur/DAB/chargement" routerLinkActive="active-link"  class="btn btn-lg text-blue d-block">Recettes Supp</a>
+    <mat-divider></mat-divider>
+    <mat-expansion-panel >
+        <mat-expansion-panel-header>
+          <mat-panel-title class="btn btn-lg text-blue d-block">
+            DAB
+          </mat-panel-title>
+      </mat-expansion-panel-header>
+      <a routerLink="/receveur/DAB/chargement" routerLinkActive="active-link"  class="btn btn-lg text-blue d-block">Chargement</a>
+      <mat-divider></mat-divider>
+      <a routerLink="/receveur/DAB/dechargement" routerLinkActive="active-link" class="btn btn-lg text-blue d-block">Dechargement</a>
+  </mat-expansion-panel>
+  <mat-divider></mat-divider>
+  <mat-expansion-panel >
+    <mat-expansion-panel-header>
+      <mat-panel-title class="btn btn-lg text-blue d-block">
+        IBS
+      </mat-panel-title>
+  </mat-expansion-panel-header>
+  <a routerLink="/receveur/DAB/chargement" routerLinkActive="active-link"  class="btn btn-lg text-blue d-block">Demande Fonds</a>
+  <mat-divider></mat-divider>
+  <a routerLink="/receveur/DAB/dechargement" routerLinkActive="active-link" class="btn btn-lg text-blue d-block">Validation Fonds</a>
+</mat-expansion-panel>
+</mat-nav-list>
+<mat-nav-list>
+    <mat-expansion-panel >
+        <mat-expansion-panel-header>
+          <mat-panel-title class="btn btn-lg text-blue d-block">
+            Demande Fonds
+          </mat-panel-title>
+      </mat-expansion-panel-header>
+      <a routerLink="/guichitier/demande/normal" routerLinkActive="active-link"  class="btn btn-lg text-blue d-block">Normal</a>
+      <mat-divider></mat-divider>
+      <a routerLink="/guichitier/demande/client" routerLinkActive="active-link" class="btn btn-lg text-blue d-block">Pour un Client</a>
+    </mat-expansion-panel>
+    <mat-expansion-panel >
+        <mat-expansion-panel-header>
+          <mat-panel-title class="btn btn-lg text-blue d-block">
+            Versement Fonds
+          </mat-panel-title>
+      </mat-expansion-panel-header>
+      <a routerLink="/guichitier/versement/normal" routerLinkActive="active-link"  class="btn btn-lg text-blue d-block">Normal</a>
+      <mat-divider></mat-divider>
+      <a routerLink="/guichitier/versement/client" routerLinkActive="active-link" class="btn btn-lg text-blue d-block">Pour un Client</a>
+    </mat-expansion-panel>
+    <mat-expansion-panel >
+        <mat-expansion-panel-header>
+          <mat-panel-title class="btn btn-lg text-blue d-block">
+            Caisse
+          </mat-panel-title>
+      </mat-expansion-panel-header>
+      <a routerLink="" routerLinkActive="active-link"  class="btn btn-lg text-blue d-block">Alimentation</a>
+      <mat-divider></mat-divider>
+      <a routerLink="" routerLinkActive="active-link" class="btn btn-lg text-blue d-block">Fermeture</a>
+    </mat-expansion-panel>
+</mat-nav-list>
