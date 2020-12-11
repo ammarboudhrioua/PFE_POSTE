@@ -1,1 +1,135 @@
-<p>versement-normal works!</p>
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">Versement Normal :</h2>
+            <div class="card border-0">
+            <table class="table table-borderless text-center"  [formGroup]="demandeNormalForm" >
+                <thead>
+                    <tr  class="text-primary">
+                        <th colspan="3" class="h5">numero du fond</th>
+                        <th colspan="3" class="h5">matricule de guichitier</th>
+                    </tr>
+                    <tr>
+                        <td colspan="3"class="h5">1</td>
+                        <td colspan="3">0123456789</td>
+                    </tr>
+                </thead>
+                <thead class="text-primary">
+                    <tr>
+                        <th class="h5 btn-lg"> valeur </th>
+                        <th class="h5"> nombre de pieces </th>
+                        <th class="h5"> montant</th>
+                        <th class="h5"> valeur </th>
+                        <th class="h5"> nombre de pieces </th>
+                        <th class="h5"> montant </th>
+                    </tr>
+                </thead>
+                <tbody class="btn-lg border rounded" formGroupName="details">
+                    <tr>
+                        <td>50</td>
+                        <td >
+                            <input formControlName='DT50' type="text" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{demandeNormalForm.value.details.DT50}}ᴰᵀ</h3>
+                        </td>
+                        <td>0.5</td>
+                        <td>
+                            <input formControlName='DT05'type="text" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{demandeNormalForm.value.details.DT05}}ᴰᵀ</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>
+                            <input formControlName='DT20' type="text" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{demandeNormalForm.value.details.DT20*20| number:'3.0-0'}}ᴰᵀ</h3>
+                        </td>
+                        <td>0.2</td>
+                        <td>
+                            <input formControlName='DT02' type="text" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{demandeNormalForm.value.details.DT02*0.2| number:'3.0-0'}}ᴰᵀ</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>
+                            <input formControlName='DT10' type="text" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{demandeNormalForm.value.details.DT10*10}}ᴰᵀ</h3>
+                        </td>
+                        <td>0.1</td>
+                        <td>
+                            <input formControlName='DT01' type="text" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{demandeNormalForm.value.details.DT01*0.1}}ᴰᵀ</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            <input formControlName='DT5' type="text" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{demandeNormalForm.value.details.DT5*5}}ᴰᵀ</h3>
+                        </td>
+                        <td>0.05</td>
+                        <td>
+                            <input formControlName='DT005'type="text" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{demandeNormalForm.value.details.DT005*0.05}}ᴰᵀ</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5(piece)</td>
+                        <td>
+                            <input formControlName='DT5P'type="text" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{demandeNormalForm.value.details.DT5P*5}}ᴰᵀ</h3>
+                        </td>
+                        <td>0.02</td>
+                        <td>
+                            <input formControlName='DT002' type="text" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{demandeNormalForm.value.details.DT002*0.02}}ᴰᵀ</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <input formControlName='DT1' type="text" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{demandeNormalForm.value.details.DT1*1}}ᴰᵀ</h3>
+                        </td>
+                        <td>0.01</td>
+                        <td>
+                            <input formControlName='DT001'type="text" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{demandeNormalForm.value.details.DT001*0.01}}ᴰᵀ</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>montant total: </td>
+                        <td>
+                            <p >{{(demandeNormalForm.value.details.DT50*50)+(demandeNormalForm.value.details.DT20*20)+(demandeNormalForm.value.details.DT10*10)+(demandeNormalForm.value.details.DT5*5)+(demandeNormalForm.value.details.DT5P*5)+(demandeNormalForm.value.details.DT1*1)+(demandeNormalForm.value.details.DT05*0.5)+(demandeNormalForm.value.details.DT02*0.2)+(demandeNormalForm.value.details.DT01*0.1)+(demandeNormalForm.value.details.DT005*0.05)+(demandeNormalForm.value.details.DT002*0.02)+(demandeNormalForm.value.details.DT001*0.01)}}ᴰᵀ</p>
+                        </td>
+                        <td colspan="4"><button (click)="demandeFondsForm()" type="button" data-toggle="collapse" href=""
+                                class="btn btn-primary abs">envoyer</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</div>
+</div>

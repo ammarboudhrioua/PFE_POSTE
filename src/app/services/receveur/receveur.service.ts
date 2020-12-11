@@ -8,6 +8,7 @@ export class ReceveurService {
 
   coffre(){
     const coffre = JSON.parse(localStorage.getItem("coffre")) || [];
+    
     return coffre;
   }
 }
