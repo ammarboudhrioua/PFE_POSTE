@@ -11,6 +11,12 @@ export class GuichitierService {
     listFonds.push(demande)
     localStorage.setItem("fonds-guichitier", JSON.stringify(listFonds))
   }
+  fermetureCaisse(fermeture){
+    const caisse = JSON.parse(localStorage.getItem("caisses")) || [];
+    caisse.push(fermeture)
+    localStorage.setItem("caisses", JSON.stringify(caisse))
+
+  }
   listFonds() {
     const fonds = JSON.parse(localStorage.getItem("fonds-guichitier")) || [];
     return fonds;

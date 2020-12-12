@@ -6,6 +6,8 @@ import { ListReceveursComponent } from './admin/list-receveurs/list-receveurs.co
 import { UpdateReceveurComponent } from './admin/update-receveur/update-receveur.component';
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { AlimentationCaisseComponent } from './dashboard/guichitier/caisse/alimentation-caisse/alimentation-caisse.component';
+import { FermetureCaisseComponent } from './dashboard/guichitier/caisse/fermeture-caisse/fermeture-caisse.component';
 import { DemandeClientComponent } from './dashboard/guichitier/fonds/demande/demande-client/demande-client.component';
 import { DemandeNormalComponent } from './dashboard/guichitier/fonds/demande/demande-normal/demande-normal.component';
 import { VersementClientComponent } from './dashboard/guichitier/fonds/versement/versement-client/versement-client.component';
@@ -63,6 +65,12 @@ const routes: Routes = [
     {
       path: 'versement/client',
       component: VersementClientComponent
+    },{
+      path:'caisse/alimentation',
+      component:AlimentationCaisseComponent
+    },{
+      path:'caisse/fermeture',
+      component:FermetureCaisseComponent
     }
     ]
   },{

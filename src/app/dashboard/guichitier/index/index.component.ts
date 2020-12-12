@@ -12,7 +12,7 @@ export class IndexComponent implements OnInit {
   constructor(private guichtierService: GuichitierService,  private route: Router) { }
 
   ngOnInit(): void {
-    this.fonds=this.guichtierService.listFonds();
+    this.fonds=this.guichtierService.listFonds().reverse();
   }
 
 }

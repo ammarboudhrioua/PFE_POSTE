@@ -3,7 +3,7 @@
         <h2 class="card-title">Liste de fonds</h2>
         <div class="card-body">
             <div class="card">
-                <table class="mb-0 table">
+                <table class="mb-0 table h4">
                     <thead >
                         <tr class="text-center">
                             <th>Type de Fonds</th>
@@ -15,7 +15,7 @@
                     <tbody>
                         <tr class="text-center" *ngFor="let fond of fonds">
                             <td>{{fond.typefonds}}</td>
-                                <td>{{fond.montant}}DT</td>
+                                <td>{{fond.montant}}ᴰᵀ</td>
                                     <td>{{fond.date | date:'medium'}}</td>
                                     <td>{{fond.status}}</td>
                     </tbody>
