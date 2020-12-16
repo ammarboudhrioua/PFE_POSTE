@@ -15,10 +15,14 @@ export class AuthService {
       return false;
     }
     else {
-      localStorage.setItem("userConnected",JSON.stringify(user ))
+      localStorage.setItem("userConnected",JSON.stringify(exist))
       this.isLoginSubject.next(true);
       return true;
     };
+  }
+  logout() {
+    localStorage.removeItem('userConnected');
+    this.isLoginSubject.next(false);
   }
     public isAuthenticated(): boolean {
       const token = localStorage.getItem('userConnected');
@@ -26,7 +30,7 @@ export class AuthService {
         return false;
       }
       else {
-        return true;
-      }
+       return true;
     }
+}
 }
