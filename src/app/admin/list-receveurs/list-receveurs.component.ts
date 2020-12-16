@@ -21,7 +21,6 @@ export class ListReceveursComponent implements OnInit {
     this.users=this.adminService.listUsers();
     this.displayedColumns= ['poste','nom', 'matricule', 'fpassword']
     this.dataSource = new MatTableDataSource(this.users)
-    console.log(this.dataSource);
     
   }
 

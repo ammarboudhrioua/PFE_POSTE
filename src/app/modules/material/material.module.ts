@@ -10,6 +10,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatDialogModule} from '@angular/material/dialog';
 const materialComponents = [
   MatTableModule,
   MatSidenavModule,
@@ -21,7 +22,8 @@ const materialComponents = [
   MatExpansionModule,
   MatIconModule,
   MatToolbarModule,
-  MatBadgeModule
+  MatBadgeModule,
+  MatDialogModule
 ];
 @NgModule({
   declarations: [],

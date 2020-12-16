@@ -18,6 +18,8 @@ import { ChargementComponent } from './reveveur/DAB/chargement/chargement.compon
 import { DABComponent } from './reveveur/DAB/dab/dab.component';
 import { DechargementComponent } from './reveveur/DAB/dechargement/dechargement.component';
 import { GuichetsComponent } from './reveveur/guichets/guichets.component';
+import { DetailsComponent } from './reveveur/historique/details/details.component';
+import { HistoriqueComponent } from './reveveur/historique/historique/historique.component';
 import { IndexRComponent } from './reveveur/index-r/index-r.component';
 
 const routes: Routes = [
@@ -93,10 +95,20 @@ const routes: Routes = [
     {
       path:'DAB/dechargement',
       component:DechargementComponent
+    },{
+      path:'IBS/demandeFonds',
+      component:DechargementComponent
     },
     {
       path:'coffre/update',
       component:UpdateCoffreComponent
+    },{
+      path:'historique',
+      component:HistoriqueComponent
+    },{
+      path:'historique/details',
+      component:DetailsComponent
+
     }
   ]
 }

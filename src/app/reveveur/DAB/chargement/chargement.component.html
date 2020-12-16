@@ -1,1 +1,54 @@
-<p>chargement works!</p>
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">Chargement DAB :</h2>
+            <div class="card border-0">
+            <table class="table table-borderless text-center" [formGroup]="rechargeDabForm" >
+                <thead class="text-primary">
+                    <tr>
+                        <th class="h5 btn-lg"> valeur </th>
+                        <th class="h5"> nombre de pieces </th>
+                        <th class="h5"> montant</th>
+                    </tr>
+                </thead>
+                <tbody class="btn-lg border rounded" >
+                    <tr>
+                        <td>50</td>
+                        <td >
+                            <input formControlName="DT50" type="text" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{rechargeDabForm.value.DT50*50}}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td >
+                            <input  formControlName="DT20"type="text" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{rechargeDabForm.value.DT20*20}}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td >
+                            <input formControlName="DT10" type="text" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{rechargeDabForm.value.DT10*10}}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>montant total: </td>
+                        <td>
+                           <h1>{{(rechargeDabForm.value.DT50*50)+(rechargeDabForm.value.DT20*20)+(rechargeDabForm.value.DT10*10)}}</h1>
+                        </td>
+                        <td colspan="4"><button  type="button" data-toggle="collapse" href=""
+                                class="btn btn-primary abs">envoyer</button></td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+</div>
+</div>
