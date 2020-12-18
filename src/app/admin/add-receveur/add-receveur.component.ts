@@ -12,6 +12,7 @@ export class AddReceveurComponent implements OnInit {
   poste='Poste dAgent :';
   submitted=false;
   userForm;
+  notifications=[];
   constructor(private adminService: AdminService, private router:Router) { }
 
   ngOnInit(): void {
@@ -29,6 +30,7 @@ export class AddReceveurComponent implements OnInit {
     if (this.userForm.invalid) {
       return ;  
     }
+    this.userForm.addControl('notifications',new FormControl(this.notifications));
     this.adminService.addUser(this.userForm.value);
     this.router.navigateByUrl('/admin')
   }

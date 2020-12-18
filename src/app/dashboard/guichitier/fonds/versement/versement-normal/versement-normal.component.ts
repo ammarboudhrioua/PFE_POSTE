@@ -11,9 +11,11 @@ import { GuichitierService } from 'src/app/services/guichitier/guichitier.servic
 export class VersementNormalComponent implements OnInit {
   demandeNormalForm;
   somme:number;
+guichitier;
     constructor(private guichitierService: GuichitierService, private router: Router) { }
   
     ngOnInit(): void {
+    this.guichitier=this.guichitierService.details();
       this.demandeNormalForm= new FormGroup({
         typefonds: new FormControl('Versement Normal'),
         date: new FormControl(Date.now()),
@@ -44,6 +46,8 @@ export class VersementNormalComponent implements OnInit {
       }
       this.somme=(this.demandeNormalForm.value.details.DT50*50)+(this.demandeNormalForm.value.details.DT20*20)+(this.demandeNormalForm.value.details.DT10*10)+(this.demandeNormalForm.value.details.DT5*5)+(this.demandeNormalForm.value.details.DT5P*5)+(this.demandeNormalForm.value.details.DT1*1)+(this.demandeNormalForm.value.details.DT05*0.5)+(this.demandeNormalForm.value.details.DT02*0.2)+(this.demandeNormalForm.value.details.DT01*0.1)+(this.demandeNormalForm.value.details.DT005*0.05)+(this.demandeNormalForm.value.details.DT002*0.02)+(this.demandeNormalForm.value.details.DT001*0.01)
       this.demandeNormalForm.addControl('montant',new FormControl(this.somme));
+      this.demandeNormalForm.addControl('Nom',new FormControl(this.guichitier.nom));
+      this.demandeNormalForm.addControl('matricule',new FormControl(this.guichitier.matricule));
       this.guichitierService.addDemande(this.demandeNormalForm.value);
       console.log(this.demandeNormalForm.value);
       this.router.navigateByUrl('/guichitier');

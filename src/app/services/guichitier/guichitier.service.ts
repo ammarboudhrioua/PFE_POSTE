@@ -21,4 +21,9 @@ export class GuichitierService {
     const fonds = JSON.parse(localStorage.getItem("fonds-guichitier")) || [];
     return fonds;
   }
+  details() {
+    const fonds = JSON.parse(localStorage.getItem("userConnected")) || [];
+    return fonds;
+  }
+  
 }

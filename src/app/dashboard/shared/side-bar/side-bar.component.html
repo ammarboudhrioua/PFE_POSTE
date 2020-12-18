@@ -2,12 +2,19 @@
     <a routerLink="/admin/add" routerLinkActive="active-link"  class="btn btn-lg text-blue d-block">Ajouter Utilisateur</a>
 </mat-nav-list>
 <mat-nav-list>
+  <a routerLink="/receveur" routerLinkActive="active-link"  class="btn btn-lg text-blue d-block">Coffre</a>
   <a routerLink="/receveur/historique" routerLinkActive="active-link"  class="btn btn-lg text-blue d-block">historique</a>
-</mat-nav-list>
-<mat-divider></mat-divider>
-<mat-nav-list >
-    <a routerLink="/receveur/DAB/chargement" routerLinkActive="active-link"  class="btn btn-lg text-blue d-block">Recettes Supp</a>
+    <!-- <a routerLink="/receveur/DAB/chargement" routerLinkActive="active-link"  class="btn btn-lg text-blue d-block">Recettes Supp</a> -->
+    <mat-expansion-panel >
+      <mat-expansion-panel-header>
+        <mat-panel-title class="btn btn-lg text-blue d-block">
+         Guichets
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <a routerLink="/receveur/DAB/chargement" routerLinkActive="active-link"  class="btn btn-lg text-blue d-block">Chargement</a>
     <mat-divider></mat-divider>
+    <a routerLink="/receveur/DAB/dechargement" routerLinkActive="active-link" class="btn btn-lg text-blue d-block">Dechargement</a>
+</mat-expansion-panel>
     <mat-expansion-panel >
         <mat-expansion-panel-header>
           <mat-panel-title class="btn btn-lg text-blue d-block">

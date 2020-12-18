@@ -33,4 +33,8 @@ export class AuthService {
        return true;
     }
 }
+notifications() {
+  const fonds = JSON.parse(localStorage.getItem("userConnected")) || [];
+  return fonds;
+}
 }

@@ -7,10 +7,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
+import { AddCoffreComponent } from './reveveur/coffre/add-coffre/add-coffre.component';
+import { NouveauCoffreComponent } from './reveveur/coffre/nouveau-coffre/nouveau-coffre.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    AddCoffreComponent,
+    NouveauCoffreComponent,
     
   ],
   imports: [

@@ -12,11 +12,11 @@ export class DemandeClientComponent implements OnInit {
 demandeClientFrom;
 montant;
 natureMvt='Nature du mouvement:';
-fonds=[];
-
+guichitier;
   constructor(private guichitierService: GuichitierService, private router: Router) { }
 
   ngOnInit(): void {
+    this.guichitier=this.guichitierService.details();
     this.demandeClientFrom= new FormGroup({
       typefonds: new FormControl('demande pour Client'),
       date: new FormControl(Date.now()),
@@ -36,6 +36,8 @@ demandeFondsForm() {
   console.log(this.montant.value);
   this.demandeClientFrom.addControl('montant',new FormControl(this.montant.value));
   this.guichitierService.addDemande(this.demandeClientFrom.value);
+  this.demandeClientFrom.addControl('Nom',new FormControl(this.guichitier.nom));
+    this.demandeClientFrom.addControl('matricule',new FormControl(this.guichitier.matricule));
   console.log(this.demandeClientFrom.value);
   this.router.navigateByUrl('/guichitier');
   

@@ -23,6 +23,10 @@ import { DemandedeviseComponent } from '../../reveveur/devise/demandedevise/dema
 import { EnvoiAutreBureauComponent } from '../../reveveur/devise/envoi-autre-bureau/envoi-autre-bureau.component';
 import { IndexRComponent } from '../../reveveur/index-r/index-r.component';
 import { DABComponent } from '../../reveveur/DAB/dab/dab.component';
+import { UpdateCoffreComponent } from 'src/app/reveveur/coffre/update-coffre/update-coffre.component';
+import { HistoriqueComponent } from 'src/app/reveveur/historique/historique/historique.component';
+import { DetailsComponent } from 'src/app/reveveur/historique/details/details.component';
+import { NotificationsComponent } from 'src/app/dashboard/shared/notifications/notifications.component';
 
 
 @NgModule({
@@ -46,6 +50,10 @@ import { DABComponent } from '../../reveveur/DAB/dab/dab.component';
     EnvoiAutreBureauComponent,
     IndexRComponent,
     DABComponent,
+    UpdateCoffreComponent,
+    HistoriqueComponent,
+    DetailsComponent,
+    NotificationsComponent,
   ],
   imports: [
     CommonModule,
