@@ -13,13 +13,15 @@ export class ListReceveursComponent implements OnInit {
   nom:String;
   matricule:String;
   fpassword:String;
+  cpassword:String;
+  actions:String;
   displayedColumns: string[] ;
     dataSource;
   constructor(private adminService: AdminService) { }
 
   ngOnInit(): void {
     this.users=this.adminService.listUsers();
-    this.displayedColumns= ['poste','nom', 'matricule', 'fpassword']
+    this.displayedColumns= ['poste','nom', 'matricule', 'fpassword','cpassword']
     this.dataSource = new MatTableDataSource(this.users)
     
   }

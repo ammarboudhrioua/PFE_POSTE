@@ -14,4 +14,12 @@ historique(){
     
     return coffre;
   }
+  addNewCoffre(demande) {
+    const newCoffre = JSON.parse(localStorage.getItem("coffres")) || [];
+    newCoffre.push(demande)
+    localStorage.setItem("coffres", JSON.stringify(newCoffre))
+  }
+  getCoffre(matrcule){
+    const newCoffre = JSON.parse(localStorage.getItem("coffres")) || [];
+}
 }

@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "PFE"
+  "defaultProject": "PFE",
+  "cli": {
+    "analytics": false
+  }
 }

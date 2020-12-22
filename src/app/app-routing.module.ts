@@ -112,6 +112,10 @@ const routes: Routes = [
       path:'historique/details',
       component:DetailsComponent
 
+    },{
+      path:'coffre/add',
+      component:AddCoffreComponent
+
     }
   ]
 }
