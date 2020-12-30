@@ -28,6 +28,7 @@ import { HistoriqueComponent } from 'src/app/reveveur/historique/historique/hist
 import { DetailsComponent } from 'src/app/reveveur/historique/details/details.component';
 import { NotificationsComponent } from 'src/app/dashboard/shared/notifications/notifications.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddCaisseComponent } from 'src/app/reveveur/coffre/add-caisse/add-caisse.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { HttpClientModule } from '@angular/common/http';
     HistoriqueComponent,
     DetailsComponent,
     NotificationsComponent,
+    AddCaisseComponent,
   ],
   imports: [
     CommonModule,

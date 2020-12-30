@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-alimentation-caisse',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./alimentation-caisse.component.css']
 })
 export class AlimentationCaisseComponent implements OnInit {
-
+  matriculeCaisse
   constructor() { }
 
   ngOnInit(): void {
+    this.matriculeCaisse = new FormControl('');
   }
 
 }

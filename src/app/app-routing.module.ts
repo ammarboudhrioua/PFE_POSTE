@@ -13,6 +13,7 @@ import { DemandeNormalComponent } from './dashboard/guichitier/fonds/demande/dem
 import { VersementClientComponent } from './dashboard/guichitier/fonds/versement/versement-client/versement-client.component';
 import { VersementNormalComponent } from './dashboard/guichitier/fonds/versement/versement-normal/versement-normal.component';
 import { IndexComponent } from './dashboard/guichitier/index/index.component';
+import { AddCaisseComponent } from './reveveur/coffre/add-caisse/add-caisse.component';
 import { AddCoffreComponent } from './reveveur/coffre/add-coffre/add-coffre.component';
 import { UpdateCoffreComponent } from './reveveur/coffre/update-coffre/update-coffre.component';
 import { ChargementComponent } from './reveveur/DAB/chargement/chargement.component';
@@ -70,10 +71,10 @@ const routes: Routes = [
       path: 'versement/client',
       component: VersementClientComponent
     },{
-      path:'caisse/alimentation',
+      path:'add_caisse',
       component:AlimentationCaisseComponent
     },{
-      path:'caisse/fermeture',
+      path:'close_caisse',
       component:FermetureCaisseComponent
     }
     ]
@@ -106,6 +107,10 @@ const routes: Routes = [
       path:'coffre/update',
       component:UpdateCoffreComponent
     },{
+      path:'create_caisse',
+      component:AddCaisseComponent
+    },
+    {
       path:'historique',
       component:HistoriqueComponent
     },{

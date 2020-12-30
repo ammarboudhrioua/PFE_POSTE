@@ -16,6 +16,7 @@ import { NouveauCoffreComponent } from './reveveur/coffre/nouveau-coffre/nouveau
     AddCoffreComponent,
     NouveauCoffreComponent,
     
+    
   ],
   imports: [
     BrowserModule,
