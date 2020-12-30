@@ -18,10 +18,10 @@ export class AddReceveurComponent implements OnInit {
   ngOnInit(): void {
     this.userForm= new FormGroup({
       poste: new FormControl('',Validators.required),
-      nom:new FormControl('',Validators.required),
       matricule: new FormControl('',[Validators.required,Validators.min(1000000)]),
-      fpassword: new FormControl('',Validators.required),
-      cpassword: new FormControl('',Validators.required)
+      nom:new FormControl('',Validators.required),
+     email:new FormControl('',Validators.required),
+      password: new FormControl('',Validators.required),
     })
   }
 

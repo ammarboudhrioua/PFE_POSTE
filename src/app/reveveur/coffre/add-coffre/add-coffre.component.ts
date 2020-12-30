@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { $ } from 'protractor';
 import { ReceveurService } from 'src/app/services/receveur/receveur.service';
 import { NouveauCoffreComponent } from '../nouveau-coffre/nouveau-coffre.component';
 
@@ -25,11 +24,15 @@ export class AddCoffreComponent implements OnInit {
 
   connect(){
 
-   if (this.receveurService.getCoffre(this.matriculeCoffre.value)===undefined) {
-     alert("matricule incorect")
+   if (this.receveurService.getCoffre(this.matriculeCoffre.value)) {
+    this.receveurService.addCoffre(this.matriculeCoffre.value)
+    console.log(this.matriculeCoffre.value);
+    
+    this.router.navigate(['/receveur']);
    } 
     else{
-      this.router.navigate(['/receveur', this.matriculeCoffre.value]);
+      
+      alert("matricule incorect")
     }
 
 

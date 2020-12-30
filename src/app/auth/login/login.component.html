@@ -1,17 +1,29 @@
-<div class="">
-    <div class="mt-5 offset-4 col-4 ">
-        <form [formGroup]="loginForm" >
-            <br>
-            <div class="input-group input-group-lg mb-3">
-                <input maxlength="10" type="text"formControlName="matricule" class="form-control border border-warning" placeholder="Matricule" >
-              </div>
-              <small class="text-danger" *ngIf="submitted && loginForm.get('matricule').hasError('required')">Email is required.</small>
-              <div class="input-group input-group-lg mb-3">
-                <input type="password" formControlName="password" class="form-control border border-warning" placeholder="Mot de passe" >
-              </div>
-              <small class="text-danger" *ngIf="submitted && loginForm.get('password').hasError('required')">Email is required.</small>
-              <button (click)="submitForm()" type="button" class="mb-1 btn btn-outline-warning btn-lg text-primary btn-block">Connecter</button>
-              <br>
+<div style="height: 200px;"></div>
+<div class="row rounded">
+  <div class="offset-4 col-4 register">
+    <div class="nav justify-content-center login">
+      <img src="/assets/images/logo-laposte.png" width="100" height="100">
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <form [formGroup]="loginForm">
+          <div class="input-group input-group-lg mb-3">
+            <input maxlength="10" type="text" formControlName="matricule" class="form-control" placeholder="Matricule">
+          </div>
+          <small class="text-danger" *ngIf="submitted && loginForm.get('matricule').hasError('required')">Email is
+            required.</small>
+          <div class="input-group input-group-lg  mb-3">
+            <input type="password" formControlName="password" class="form-control" placeholder="Mot de passe">
+          </div>
+          <small class="text-danger" *ngIf="submitted && loginForm.get('password').hasError('required')">Email is
+            required.</small>
+          <button style="background: #f8f9fa;" (click)="submitForm()" type="button"
+            class="mb-1 btn btn-lg text-warning btn-block">Connecter</button>
+          <br>
         </form>
+      </div>
     </div>
-    </div>
+
+  </div>
+</div>

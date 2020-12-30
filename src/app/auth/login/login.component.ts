@@ -25,11 +25,19 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    console.log(this.loginForm.value);
-    
-    if(this.authService.login(this.loginForm.value)){
-      this.router.navigateByUrl('/admin')
-    }
-
-}
+  switch(this.authService.login(this.loginForm.value)){ 
+   case "Agent de Guichet": { 
+    this.router.navigateByUrl('/guichitier') 
+      break; 
+   } 
+   case "Adminstrateur": { 
+    this.router.navigateByUrl('/admin')
+      break; 
+   } 
+   case "Receveur": { 
+    this.router.navigateByUrl('/add_coffre') 
+      break; 
+   } 
+  } 
+  }
 }

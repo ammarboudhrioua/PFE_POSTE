@@ -17,7 +17,7 @@ export class AuthService {
     else {
       localStorage.setItem("userConnected",JSON.stringify(exist))
       this.isLoginSubject.next(true);
-      return true;
+      return exist.poste;
     };
   }
   logout() {
