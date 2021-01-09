@@ -33,16 +33,12 @@ export class ListReceveursComponent implements OnInit {
    
     this.adminService.listUsers().subscribe((response:any) => {
      this.dataSource.data=response.user as users[];
-      
-      
     });
   }
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
     this.adminService.listUsers().subscribe((response:any) => {
       this.dataSource.data=response.user as users[];
-       
-       
      });
   }
 
@@ -56,10 +52,18 @@ Update(id): void {
   const dialogRef = this.dialog.open(UpdateReceveurComponent, {
     data :{'id':id}
 });
+this.ngAfterViewInit()
 }
 Delete (id) {
-  this.adminService.deleteUser(id);
-  location.reload();
+  this.adminService.deleteUser(id).subscribe(
+    (msg) => console.log(msg),
+    (error) => console.log(error),
+    ()=>{
+      this.ngAfterViewInit()
+    }
+
+  );
+ 
 
   }
 }

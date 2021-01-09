@@ -1,41 +1,46 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReceveurService {
-  constructor() { }
+  baseUrl="/api";
+  constructor(private  httpClient: HttpClient) { }
 historique(){
-  const historique = JSON.parse(localStorage.getItem("fonds-guichitier")) || [];
-  return historique
 };
   coffre(){
-    const coffre = JSON.parse(localStorage.getItem("coffres")) || [];
     const user = JSON.parse(localStorage.getItem("userConnected")) || [];
-    return coffre.find(e =>e.matriculeCoffre===user.coffre);
-  }
+    return this.httpClient.get(this.baseUrl+'coffres/getMatCoffres/'+user.coffre)}
+
   addCoffre(demande){
     const user = JSON.parse(localStorage.getItem("userConnected")) || [];
     user['coffre']=demande;
     localStorage.setItem("userConnected", JSON.stringify(user))
-    
   };
-  addNewCoffre(demande) {
-    const newCoffre = JSON.parse(localStorage.getItem("coffres")) || [];
-    newCoffre.push(demande)
-    localStorage.setItem("coffres", JSON.stringify(newCoffre))
+  addNewCoffre(data,coff) {
+    this.httpClient.post<any>(this.baseUrl+'coffres/addCoffre',data).subscribe((res:any)=>{
+      console.log(res.coffre);
+    this.httpClient.post<any>(this.baseUrl+'historique/createCofhistory/'+res.coffre._id,coff).subscribe();
+    })
   }
-  getCoffre(x){
-    const coffres = JSON.parse(localStorage.getItem("coffres")) || [];
-const exist =coffres.find((currentCoffre) => ((currentCoffre.matriculeCoffre) === (x)));
-console.log(exist);
-
-if (exist === undefined) {
-  return false;
-}
-else {
-
-  return true
-};
+  getCoffre(id){
+  return this.httpClient.get(this.baseUrl+'coffres/getMatCoffres/'+id)
+  }
+  listCaisses(){
+    const user = JSON.parse(localStorage.getItem("userConnected")) || [];
+    return this.httpClient.get(this.baseUrl+'caisses/allcaisses/'+user.coffre)
+  }
+  addDab(dab){
+    const user = JSON.parse(localStorage.getItem("userConnected")) || [];
+   return this.httpClient.put<any>(this.baseUrl+'coffres/addDab/'+user.coffre,dab)
+  }
+  retraitDab(dab){
+    const user = JSON.parse(localStorage.getItem("userConnected")) || [];
+    return this.httpClient.put<any>(this.baseUrl+'coffres/retraitDab/'+user.coffre,dab)
+  }
+  addHistorique(data){
+    const user = JSON.parse(localStorage.getItem("userConnected")) || [];
+  return this.httpClient.post<any>(this.baseUrl+'historique/addHistorique/'+user.coffre,data)
   }
 }

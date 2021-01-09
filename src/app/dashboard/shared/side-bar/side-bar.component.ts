@@ -7,13 +7,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-
+receveur=false;
+guichitier=false;
+admin=false;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+  const user = JSON.parse(localStorage.getItem("userConnected")) || [];
+  if(user.poste==='Receveur'){
+    this.receveur=true
   }
-navigate(){
-  console.log('ok');
-  this.router.navigateByUrl('/admin/add');
+  else{
+    if(user.poste==='Agent de Guichet'){
+      this.guichitier=true
+    }
+  
+  else{
+    if(user.poste==='Adminstrateur'){
+      this.admin=true
+    }
+
+  }
+}
 }
 }

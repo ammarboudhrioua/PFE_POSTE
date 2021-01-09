@@ -14,10 +14,7 @@ export class AdminService {
       this.httpClient.post<any>(this.baseUrl+'users/addUser',data).subscribe();
     }
     listUsers() {
-     const user= this.httpClient.get(this.baseUrl+'users/allUsers');
-     console.log("ok");
-     
-    return user;
+  return this.httpClient.get(this.baseUrl+'users/allUsers');
     }
     updateUser(id,user){
       this.httpClient.put(this.baseUrl+'users/updateUser/'+id,user).subscribe(
@@ -30,10 +27,7 @@ export class AdminService {
       return user;
     }
     deleteUser(id){
-      this.httpClient.delete(this.baseUrl+'users/deleteUser/'+id).subscribe(
-        (msg) => console.log(msg),
-        (error) => console.log(error)
-      );
+    return  this.httpClient.delete(this.baseUrl+'users/deleteUser/'+id)
    
     }
     }

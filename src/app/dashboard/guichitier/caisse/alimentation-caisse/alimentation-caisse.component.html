@@ -6,7 +6,7 @@
                 <input maxlength="10" [formControl]="matriculeCaisse" type="text"
                     class="form-control border border-warning" placeholder="Matricule Caisse">
             </div>
-            <button type="button"
+            <button type="button" (click)="connect()"
                 class="mb-1 btn btn-outline-warning btn-lg text-primary btn-block">Ajouter</button>
             <br>
         </form>

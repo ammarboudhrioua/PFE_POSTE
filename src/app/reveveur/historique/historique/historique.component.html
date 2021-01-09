@@ -1,42 +1,24 @@
 <div class="card">
     <div class="card-body">
-        <mat-form-field>
-            <mat-label>Recherche</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-          </mat-form-field>
-          
-          <table mat-table [dataSource]="dataSource">
-           <!-- Poste Column -->
-           <ng-container matColumnDef="mouvements">
-            <th mat-header-cell *matHeaderCellDef> mouvements</th>
-            <td mat-cell *matCellDef="let historique">guichitiers: hazem boudhrioua </td>
-          </ng-container>
-            <!-- nom Column -->
-            <ng-container matColumnDef="type">
-              <th mat-header-cell *matHeaderCellDef> type mouvement </th>
-              <td mat-cell *matCellDef="let historique"> demande normal </td>
-            </ng-container>
-          
-            <!-- matricule Column -->
-            <ng-container matColumnDef="date">
-              <th mat-header-cell *matHeaderCellDef> date </th>
-              <td mat-cell *matCellDef="let historique"> {{historique.date| date}} </td>
-            </ng-container>
-          
-            <!-- password Column -->
-            <ng-container matColumnDef="montant">
-              <th mat-header-cell *matHeaderCellDef> montant </th>
-              <td mat-cell *matCellDef="let historique"> {{historique.montant}}ᴰᵀ</td>
-            </ng-container>
-          
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          
-            <!-- Row shown when there is no matching data. -->
-            <!-- <tr class="mat-row" *matNoDataRow>
-              <td class="mat-cell" colspan="4">acune correspondance pour ""</td>
-            </tr> -->
-          </table>
-        
+      <table mat-table [dataSource]="historique" class="mat-elevation-z8">
+        <ng-container matColumnDef="Agent">
+          <th mat-header-cell *matHeaderCellDef>Agent </th>
+          <td mat-cell *matCellDef="let element"> {{element.Agent}} </td>
+        </ng-container>
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef>type </th>
+          <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+        </ng-container>
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef>date </th>
+          <td mat-cell *matCellDef="let element"> {{element.date|date:'short'}} </td>
+        </ng-container>
+        <ng-container matColumnDef="montant">
+          <th mat-header-cell *matHeaderCellDef>montant</th>
+          <td mat-cell *matCellDef="let element"> {{element.montant}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
     </div>
   </div>

@@ -19,7 +19,7 @@ export class VersementClientComponent implements OnInit {
     ngOnInit(): void {
       this.guichitier=this.guichitierService.details();
       this.versementClientFrom= new FormGroup({
-        typefonds: new FormControl('versement pour Client'),
+        typedemande: new FormControl('versement pour Client'),
         date: new FormControl(Date.now()),
         status: new FormControl('en attente'),
         nomClient: new FormControl('',Validators.required),

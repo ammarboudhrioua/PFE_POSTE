@@ -14,7 +14,7 @@
                     <tr>
                         <td>50</td>
                         <td >
-                            <input formControlName="DT50" type="text" placeholder="000">
+                            <input formControlName="DT50" type="number" placeholder="000">
                         </td>
                         <td>
                             <h3>{{rechargeDabForm.value.DT50*50}}</h3>
@@ -23,7 +23,7 @@
                     <tr>
                         <td>20</td>
                         <td >
-                            <input  formControlName="DT20"type="text" placeholder="000">
+                            <input  formControlName="DT20"type="number" placeholder="000">
                         </td>
                         <td>
                             <h3>{{rechargeDabForm.value.DT20*20}}</h3>
@@ -32,7 +32,7 @@
                     <tr>
                         <td>10</td>
                         <td >
-                            <input formControlName="DT10" type="text" placeholder="000">
+                            <input formControlName="DT10" type="number" placeholder="000">
                         </td>
                         <td>
                             <h3>{{rechargeDabForm.value.DT10*10}}</h3>
@@ -43,7 +43,7 @@
                         <td>
                            <h1>{{(rechargeDabForm.value.DT50*50)+(rechargeDabForm.value.DT20*20)+(rechargeDabForm.value.DT10*10)}}</h1>
                         </td>
-                        <td colspan="4"><button  type="button" data-toggle="collapse" href=""
+                        <td colspan="4"><button (click)="valide()" type="button" data-toggle="collapse" href=""
                                 class="btn btn-primary abs">envoyer</button></td>
                     </tr>
                    

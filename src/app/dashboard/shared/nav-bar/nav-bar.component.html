@@ -14,16 +14,10 @@
                 </svg>
               </button>
             </div> 
-              <li class="mr-4">
-                <div class="border-right">
-                <table class="mr-4">
-                    <tr class="h4 text-white">{{user.nom}}</tr>
-                   <tr class="h4 text-warning">{{user.poste}}</tr>
-                </table>
-              </div>
-              </li>
-<li class="">
-    <div mat-button [matMenuTriggerFor]="menu">
+             
+<li class="mr-4">
+    <div class="border-right" mat-button [matMenuTriggerFor]="menu">
+      <div class="mr-4">
         <svg width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-person-circle"
             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -33,12 +27,21 @@
                 d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
         </svg>
       </div>
+      </div>
           <mat-menu class="btn btn-danger btn-outline-danger btn-lg " #menu="matMenu">
         <button (click)="logout()" mat-menu-item>Logout
             <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z"/></svg>    
         </button>
         <button mat-menu-item>Item 2</button>
     </mat-menu>
+</li>
+<li class="">
+  <div >
+  <table >
+      <tr class="h4 text-white">{{user.nom}}</tr>
+     <tr class="h4 text-warning">{{user.poste}}</tr>
+  </table>
+</div>
 </li>
           </ul>
     </div>

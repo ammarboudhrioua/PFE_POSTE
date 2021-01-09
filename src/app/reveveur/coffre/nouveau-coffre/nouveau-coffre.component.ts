@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ReceveurService } from 'src/app/services/receveur/receveur.service';
 
@@ -13,12 +13,21 @@ export class NouveauCoffreComponent implements OnInit {
   demandeNormalForm;
   somme:number;
   guichitier;
+  coffreForm;
+
     constructor( private receveurService: ReceveurService, private router: Router) { }
 
     ngOnInit(): void {
-
+      
+      const user = JSON.parse(localStorage.getItem("userConnected")) || [];
+this.coffreForm= new FormGroup({
+  Agent:new FormControl(user.nom),
+  type:new FormControl('création de la coffre'),
+  date:new FormControl(Date.now()),
+});
       this.demandeNormalForm= new FormGroup({
-        matriculeCoffre: new FormControl(),
+        matricule: new FormControl(),
+        historique: new FormArray([]),
         details: new FormGroup({
         DT50: new FormControl(0),
         DT20: new FormControl(0),
@@ -63,8 +72,7 @@ export class NouveauCoffreComponent implements OnInit {
       }
       this.somme=(this.demandeNormalForm.value.details.DT50*50)+(this.demandeNormalForm.value.details.DT20*20)+(this.demandeNormalForm.value.details.DT10*10)+(this.demandeNormalForm.value.details.DT5*5)+(this.demandeNormalForm.value.details.DT5P*5)+(this.demandeNormalForm.value.details.DT1*1)+(this.demandeNormalForm.value.details.DT05*0.5)+(this.demandeNormalForm.value.details.DT02*0.2)+(this.demandeNormalForm.value.details.DT01*0.1)+(this.demandeNormalForm.value.details.DT005*0.05)+(this.demandeNormalForm.value.details.DT002*0.02)+(this.demandeNormalForm.value.details.DT001*0.01)
       this.demandeNormalForm.addControl('montant',new FormControl(this.somme));
-      this.receveurService.addNewCoffre(this.demandeNormalForm.value);
-      console.log(this.demandeNormalForm.value);
-
+      this.receveurService.addNewCoffre(this.demandeNormalForm.value,this.coffreForm.value)
+     
     }
 }

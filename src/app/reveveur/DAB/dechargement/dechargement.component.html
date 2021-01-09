@@ -1,1 +1,54 @@
-<p>dechargement works!</p>
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">Chargement DAB :</h2>
+            <div class="card border-0">
+            <table class="table table-borderless text-center" [formGroup]="dechargeDabForm" >
+                <thead class="text-primary">
+                    <tr>
+                        <th class="h5 btn-lg"> valeur </th>
+                        <th class="h5"> nombre de pieces </th>
+                        <th class="h5"> montant</th>
+                    </tr>
+                </thead>
+                <tbody class="btn-lg border rounded" >
+                    <tr>
+                        <td>50</td>
+                        <td >
+                            <input formControlName="DT50" type="number" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{dechargeDabForm.value.DT50*50}}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td >
+                            <input  formControlName="DT20"type="number" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{dechargeDabForm.value.DT20*20}}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td >
+                            <input formControlName="DT10" type="number" placeholder="000">
+                        </td>
+                        <td>
+                            <h3>{{dechargeDabForm.value.DT10*10}}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>montant total: </td>
+                        <td>
+                           <h1>{{(dechargeDabForm.value.DT50*50)+(dechargeDabForm.value.DT20*20)+(dechargeDabForm.value.DT10*10)}}</h1>
+                        </td>
+                        <td colspan="4"><button (click)="valide()" type="button" data-toggle="collapse" href=""
+                                class="btn btn-primary abs">envoyer</button></td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+</div>
+</div>

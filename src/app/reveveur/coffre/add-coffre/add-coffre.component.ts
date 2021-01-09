@@ -24,16 +24,28 @@ export class AddCoffreComponent implements OnInit {
 
   connect(){
 
-   if (this.receveurService.getCoffre(this.matriculeCoffre.value)) {
-    this.receveurService.addCoffre(this.matriculeCoffre.value)
-    console.log(this.matriculeCoffre.value);
+
+  this.receveurService.getCoffre(this.matriculeCoffre.value).subscribe((rep:any) =>{
+    if(rep.coff ===null){
+          alert("matricule incorect")
+        }
+        else{
+          this.receveurService.addCoffre(this.matriculeCoffre.value)
+          this.router.navigate(['/receveur',]);
+        }
+        
+  });
+
+
+  //   this.receveurService.addCoffre(this.matriculeCoffre.value)
+  //   console.log(this.matriculeCoffre.value);
     
-    this.router.navigate(['/receveur']);
-   } 
-    else{
+  //   this.router.navigate(['/receveur']);
+  //  } 
+  //   else{
       
-      alert("matricule incorect")
-    }
+  //     alert("matricule incorect")
+  //   }
 
 
   }

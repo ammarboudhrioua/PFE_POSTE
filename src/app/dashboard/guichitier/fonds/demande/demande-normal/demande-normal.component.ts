@@ -18,7 +18,7 @@ guichitier;
   ngOnInit(): void {
     this.guichitier=this.guichitierService.details();
     this.demandeNormalForm= new FormGroup({
-      typefonds: new FormControl('demande Normal'),
+      typedemande: new FormControl('demande Normal'),
       date: new FormControl(Date.now()),
       status: new FormControl('en attente'),
       details: new FormGroup({
