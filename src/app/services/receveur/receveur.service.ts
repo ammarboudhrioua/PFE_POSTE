@@ -43,4 +43,8 @@ historique(){
     const user = JSON.parse(localStorage.getItem("userConnected")) || [];
   return this.httpClient.post<any>(this.baseUrl+'historique/addHistorique/'+user.coffre,data)
   }
+  listNotification(){
+    const user = JSON.parse(localStorage.getItem("userConnected")) || [];
+    return this.httpClient.get(this.baseUrl+'demandes/listeDemandes/'+user.coffre)
+  }
 }

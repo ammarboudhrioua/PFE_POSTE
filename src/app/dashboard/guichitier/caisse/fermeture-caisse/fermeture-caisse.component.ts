@@ -18,7 +18,8 @@ guichitier;
       this.guichitier=this.guichitierService.details();
       this.demandeNormalForm= new FormGroup({
         date: new FormControl(Date.now()),
-        matricule: new FormControl('#0001'),
+        typedemande: new FormControl('Fermeture caisse'),
+        matricule: new FormControl(''),
         details: new FormGroup({
         DT50: new FormControl(),
         DT20: new FormControl(),

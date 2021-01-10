@@ -12,7 +12,7 @@
         <br>
         <form [formGroup]="loginForm" class="needs-validation">
           <div class="input-group input-group-lg mb-3 ">
-            <input maxlength="10" type="text" formControlName="matricule" class="border border-warning form-control" placeholder="Matricule" 
+            <input  type="text" formControlName="matricule" class="border border-warning form-control" placeholder="Matricule" 
             [ngClass]="{ 'is-invalid': submitted && loginForm.controls.matricule.errors,'is-valid': submitted && !loginForm.controls.matricule.errors }">
           </div>
           <small class="text-danger" *ngIf="submitted && loginForm.get('matricule').hasError('required')">Email is
