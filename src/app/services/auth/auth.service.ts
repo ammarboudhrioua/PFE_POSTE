@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
@@ -5,22 +6,17 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-
-  constructor() { }
+  baseUrl="/api";
+  constructor(private  httpClient: HttpClient) { }
   isLoginSubject = new BehaviorSubject<boolean>(this.isAuthenticated());
+ 
   login(user) {
-    const users = JSON.parse(localStorage.getItem("utilisateurs")) || [];
-    const exist = users.find((currentUser) => (currentUser.matricule === user.matricule) && (currentUser.password === user.fpassword));
-    if (exist === undefined) {
-      return false;
-    }
-    else {
-      localStorage.setItem("userConnected",JSON.stringify(exist))
-      this.isLoginSubject.next(true);
-      return exist.poste;
-    };
+  return  this.httpClient.post<any>(this.baseUrl+'/logins/login',user)  
   }
+
+
   logout() {
+    localStorage.removeItem('token');
     localStorage.removeItem('userConnected');
     this.isLoginSubject.next(false);
   }
