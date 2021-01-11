@@ -47,4 +47,7 @@ historique(){
     const user = JSON.parse(localStorage.getItem("userConnected")) || [];
     return this.httpClient.get(this.baseUrl+'demandes/listeDemandes/'+user.coffre)
   }
+  refuseDemande(idDemande){
+    const user = JSON.parse(localStorage.getItem("userConnected")) || [];
+  }
 }
