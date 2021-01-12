@@ -47,4 +47,15 @@ historique(){
     const user = JSON.parse(localStorage.getItem("userConnected")) || [];
     return this.httpClient.get(this.baseUrl+'demandes/listeDemandes/'+user.coffre)
   }
+  refuseDemande(idDemande){
+    const user = JSON.parse(localStorage.getItem("userConnected")) || [];
+  }
+  alimCoffre(data,coff) {
+    console.log(data);
+    const user = JSON.parse(localStorage.getItem("userConnected")) || [];
+    this.httpClient.post<any>(this.baseUrl+'coffres/alimCoffre/'+user.coffre,data).subscribe((res:any)=>{
+      console.log(res.coffre);
+    this.httpClient.post<any>(this.baseUrl+'historique/createCofhistory/'+res.coffre._id,coff).subscribe();
+    })
+  }
 }
