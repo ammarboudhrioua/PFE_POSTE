@@ -20,6 +20,7 @@ import { UpdateCoffreComponent } from './reveveur/coffre/update-coffre/update-co
 import { ChargementComponent } from './reveveur/DAB/chargement/chargement.component';
 import { DABComponent } from './reveveur/DAB/dab/dab.component';
 import { DechargementComponent } from './reveveur/DAB/dechargement/dechargement.component';
+import { AddFondsComponent } from './reveveur/fonds/add-fonds/add-fonds.component';
 import { GuichetsComponent } from './reveveur/guichets/guichets.component';
 import { DetailsComponent } from './reveveur/historique/details/details.component';
 import { HistoriqueComponent } from './reveveur/historique/historique/historique.component';
@@ -124,6 +125,9 @@ const routes: Routes = [
     },{
       path:'coffre/add',
       component:AddCoffreComponent
+    },{
+      path:'fonds/add',
+      component:AddFondsComponent
     }
   ]
 }

@@ -1,0 +1,228 @@
+<form [formGroup]="demandeNormalForm">
+    <h2>Nouveau Coffre :</h2>
+   
+    <mat-dialog-content class="mat-typography" >
+        <table class="table table-borderless text-center">
+
+            <thead class="text-primary">
+                <tr>
+                    <th class="h5 btn-lg"> valeur </th>
+                    <th class="h5"> nombre de pieces </th>
+                    <th class="h5"> montant</th>
+                    <th class="h5"> valeur </th>
+                    <th class="h5"> nombre de pieces </th>
+                    <th class="h5"> montant </th>
+                </tr>
+            </thead>
+            <tbody class="btn-lg border rounded" >
+                <tr>
+                    <td>50</td>
+                    <td>
+                        <input formControlName='DT50' type="text" placeholder="000">
+                    </td>
+                    <td>
+                        <h3>{{demandeNormalForm.value.DT50*50}}ᴰᵀ</h3>
+                    </td>
+                    <td>500 Millimes</td>
+                    <td>
+                        <input formControlName='DT05' type="text" placeholder="000">
+                    </td>
+                    <td>
+                        <h3>{{demandeNormalForm.value.DT05*0.5}}ᴰᵀ</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>
+                        <input formControlName='DT20' type="text" placeholder="000">
+                    </td>
+                    <td>
+                        <h3>{{demandeNormalForm.value.DT20*20}}ᴰᵀ</h3>
+                    </td>
+                    <td>200 Millimes</td>
+                    <td>
+                        <input formControlName='DT02' type="text" placeholder="000">
+                    </td>
+                    <td>
+                        <h3>{{demandeNormalForm.value.DT02*0.2}}ᴰᵀ</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>
+                        <input formControlName='DT10' type="text" placeholder="000">
+                    </td>
+                    <td>
+                        <h3>{{demandeNormalForm.value.DT10*10}}ᴰᵀ</h3>
+                    </td>
+                    <td>100 Millimes</td>
+                    <td>
+                        <input formControlName='DT01' type="text" placeholder="000">
+                    </td>
+                    <td>
+                        <h3>{{demandeNormalForm.value.DT01*0.1}}ᴰᵀ</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>
+                        <input formControlName='DT5' type="text" placeholder="000">
+                    </td>
+                    <td>
+                        <h3>{{demandeNormalForm.value.DT5*5}}ᴰᵀ</h3>
+                    </td>
+                    <td>50 Millimes</td>
+                    <td>
+                        <input formControlName='DT005' type="text" placeholder="000">
+                    </td>
+                    <td>
+                        <h3>{{demandeNormalForm.value.DT005*0.05}}ᴰᵀ</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5(piece)</td>
+                    <td>
+                        <input formControlName='DT5P' type="text" placeholder="000">
+                    </td>
+                    <td>
+                        <h3>{{demandeNormalForm.value.DT5P*5}}ᴰᵀ</h3>
+                    </td>
+                    <td>20 Millimes</td>
+                    <td>
+                        <input formControlName='DT002' type="text" placeholder="000">
+                    </td>
+                    <td>
+                        <h3>{{demandeNormalForm.value.DT002*0.02}}ᴰᵀ</h3>
+                    </td>
+                </tr>
+                <tr><td>2</td>
+                    <td>
+                        <input formControlName='DT2' type="text" placeholder="000">
+                    </td>
+                    <td>
+                        <h3>{{demandeNormalForm.value.DT2*2}}ᴰᵀ</h3>
+                    </td>
+                    <td>10 Millimes</td>
+                    <td>
+                        <input formControlName='DT001' type="text" placeholder="000">
+                    </td>
+                    <td>
+                        <h3>{{demandeNormalForm.value.DT001*0.01}}ᴰᵀ</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <input formControlName='DT1' type="text" placeholder="000">
+                    </td>
+                    <td>
+                        <h3>{{demandeNormalForm.value.DT1*1}}ᴰᵀ</h3>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>montant total:</td>
+                    <td>{{(demandeNormalForm.value.DT50*50)+(demandeNormalForm.value.DT20*20)+(demandeNormalForm.value.DT10*10)+(demandeNormalForm.value.DT5*5)+(demandeNormalForm.value.DT5P*5)+(demandeNormalForm.value.DT1*1)+(demandeNormalForm.value.DT05*0.5)+(demandeNormalForm.value.DT02*0.2)+(demandeNormalForm.value.DT01*0.1)+(demandeNormalForm.value.DT005*0.05)+(demandeNormalForm.value.DT002*0.02)+(demandeNormalForm.value.DT001*0.01)}}ᴰᵀ
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+            <table class="table table-borderless text-center">
+                <thead class="text-primary">
+                    <tr>
+                        <th class="h5 "> Monnaie </th>
+                        <th class="h5"> Sigle</th>
+                        <th class="h5">Nombre</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>Dollar USA</td>
+                    <td>USD</td>
+                    <td><input formControlName='USD' type="text"
+                            placeholder="000"></td>
+
+                </tr>
+                <tr>
+                    <td>EURO</td>
+                    <td>EUR</td>
+                    <td> <input formControlName='EUR' type="text" placeholder="000"></td>
+                </tr>
+                <tr>
+                    <td>Riyal Saoudien</td>
+                    <td>SAR</td>
+                    <td> <input formControlName='SAR' type="text" placeholder="000"></td>
+                </tr>
+                <tr>
+                    <td>Dollar Canadien</td>
+                    <td>CAD</td>
+                    <td> <input formControlName='CAD' type="text" placeholder="000"></td>
+                </tr>
+                <tr>
+                    <td>Couronne Danoise</td>
+                    <td>DKK</td>
+                    <td> <input formControlName='DKK' type="text" placeholder="000"></td>
+                </tr>
+                <tr>
+                    <td>Dirham EUA</td>
+                    <td>AED</td>
+                    <td> <input formControlName='AED' type="text" placeholder="000"></td>
+                </tr>
+                <tr>
+                    <td>Yen Japonais</td>
+                    <td>JPY</td>
+                    <td> <input formControlName='JPY' type="text" placeholder="000"></td>
+                </tr>
+                <tr>
+                    <td>Dinar Koweitien</td>
+                    <td>KWD</td>
+                    <td> <input formControlName='KWD' type="text" placeholder="000"></td>
+                </tr>
+                <tr>
+                    <td>Couronne Norvégeinne</td>
+                    <td>NOK</td>
+                    <td> <input formControlName='NOK' type="text" placeholder="000"></td>
+                </tr>
+                <tr>
+                    <td>Livre Sterling</td>
+                    <td>GBP</td>
+                    <td> <input formControlName='GBP' type="text" placeholder="000"></td>
+                </tr>
+                <tr>
+                    <td>Riyal Qatari</td>
+                    <td>QAR</td>
+                    <td> <input formControlName='QAR' type="text" placeholder="000"></td>
+                </tr>
+                <tr>
+                    <td>Couronne Suédoise</td>
+                    <td>SEK</td>
+                    <td> <input formControlName='SEK' type="text" placeholder="000"></td>
+                </tr>
+                <tr>
+                    <td>Franc Suisse</td>
+                    <td>CHF</td>
+                    <td> <input formControlName='CHF' type="text" placeholder="000"></td>
+                </tr>
+                <tr>
+                    <td>Dinar Bahreîni</td>
+                    <td>BHD</td>
+                    <td> <input formControlName='BHD' type="text" placeholder="000"></td>
+                </tr>
+                <tr>
+                    <td>Dinar Libyen</td>
+                    <td>LYD</td>
+                    <td> <input formControlName='LYD' type="text" placeholder="000"></td>
+                </tr>
+            </table>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button (click)="demandeFondsForm()" type="button"
+           href="" class="btn btn-primary abs">Créer</button>
+    </mat-dialog-actions>
+</form>

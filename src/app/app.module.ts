@@ -10,6 +10,7 @@ import { MaterialModule } from './modules/material/material.module';
 import { AddCoffreComponent } from './reveveur/coffre/add-coffre/add-coffre.component';
 import { NouveauCoffreComponent } from './reveveur/coffre/nouveau-coffre/nouveau-coffre.component';
 import { ListCaissesComponent } from './reveveur/coffre/list-caisses/list-caisses.component';
+import { AddFondsComponent } from './reveveur/fonds/add-fonds/add-fonds.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { ListCaissesComponent } from './reveveur/coffre/list-caisses/list-caisse
     AddCoffreComponent,
     NouveauCoffreComponent,
     ListCaissesComponent,
+    AddFondsComponent,
     
     
   ],
